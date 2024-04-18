@@ -72,7 +72,7 @@ def compress_and_base64(input):
     # Decode
     [System.IO.MemoryStream][Convert]::FromBase64String($COMPRESSED_DATA_HERE),
 
-    # Decompress stream with Gzip
+    # Decompress stream with gzip
     [System.IO.Compression.CompressionMode]::Decompress
 
 ) |
