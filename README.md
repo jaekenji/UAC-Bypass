@@ -1,3 +1,3 @@
 # Theory
 
-> Only with trust, can you traverse
+> Unlock hidden doors with trust as your key
