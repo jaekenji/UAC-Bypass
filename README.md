@@ -93,4 +93,4 @@ or
 
 ### Powershell Obfuscation Methods
 <p>I'm not re-writing documentation for this, see link below</p>
-[https://github.com/jaekenji/PowerShell-Backdoor-Generator/](Powershell-Backdoor-Generator)
+(https://github.com/jaekenji/PowerShell-Backdoor-Generator/)[Powershell-Backdoor-Generator]
