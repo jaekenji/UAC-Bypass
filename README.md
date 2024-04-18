@@ -4,7 +4,7 @@
 
 ### Vulnerability
 
-fodhelper.exe itself does not execute registry keys per se; however, it reads certain registry keys to determine its behavior
+fodhelper.exe itself does not execute registry keys per se; However, it reads certain registry keys to determine its behavior. By misusing the "ms-settings" key, we can potentially get fodhelper to run values within a key
 
 fodhelper.exe is designed to run with elevated privileges without prompting the user with a uac
 
