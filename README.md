@@ -64,3 +64,32 @@ def compress_and_base64(input):
 <b>Extraction Method</b>
 
 ```powershell
+# Decode and Decompress
+# Output will be a string
+
+(New-Object IO.Compression.GZipStream(
+
+    # Decode
+    [System.IO.MemoryStream][Convert]::FromBase64String($COMPRESSED_DATA_HERE),
+
+    # Decompress stream with Gzip
+    [System.IO.Compression.CompressionMode]::Decompress
+
+) |
+
+# % is shorthand for "foreach-object"
+
+%{
+
+    # Read from gzip stream, convert to ascii
+    New-Object System.IO.StreamReader($_, [System.Text.Encoding]::ASCII)
+
+# Convert all to single string
+}).ReadToEnd() 
+```
+
+or
+
+```powershell
+(New-Object IO.Compression.GZipStream([System.IO.MemoryStream][Convert]::FromBase64String(COMPRESSED_DATA_HERE), [System.IO.Compression.CompressionMode]::Decompress) |%{New-Object System.IO.StreamReader($_, [System.Text.Encoding]::ASCII)}).ReadToEnd()
+```
