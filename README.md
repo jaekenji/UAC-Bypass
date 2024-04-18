@@ -88,5 +88,5 @@ def compress_and_base64(input):
 or
 
 ```powershell
-(New-Object IO.Compression.GZipStream([System.IO.MemoryStream][Convert]::FromBase64String(COMPRESSED_DATA_HERE), [System.IO.Compression.CompressionMode]::Decompress) |%{New-Object System.IO.StreamReader($_, [System.Text.Encoding]::ASCII)}).ReadToEnd()
+(New-Object IO.Compression.GZipStream([System.IO.MemoryStream][Convert]::FromBase64String($COMPRESSED_DATA_HERE), [System.IO.Compression.CompressionMode]::Decompress) |%{New-Object System.IO.StreamReader($_, [System.Text.Encoding]::ASCII)}).ReadToEnd()
 ```
