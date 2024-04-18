@@ -106,3 +106,12 @@ or
 # STRING SLICING -> Write-Host 420
 "zttxirGVRskXrsEFIcH0X2cPLmO WnoruBWUks-f2neGJNIo46"[34,12,4,2,42,38,18,30,13,1,27,48,40,19] -join ""
 ```
+
+### Match and Replace
+<p>Because each method returns a string, we need to include either & and/or & Invoke-Expression</p>
+
+```python
+full_payload = r"$command = '" + encoded_command + r"';(& (\New-Object\) (\IO.Compression.GZipStream\)([System.IO.MemoryStream][Convert]::FromBase64String('" + compressed_base64 + r"'), [System.IO.Compression.CompressionMode]::Decompress) | % {(& (\New-Object\) (\System.IO.StreamReader\)($_, [System.Text.Encoding]::ASCII))}).(\ReadToEnd\)() | Invoke-Expression"
+
+pattern = r"\\.+?\\"
+```
