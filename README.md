@@ -68,17 +68,14 @@ def compress_and_base64(input):
 # Output will be a string
 
 (New-Object IO.Compression.GZipStream(
-
     # Decode
     [System.IO.MemoryStream][Convert]::FromBase64String($COMPRESSED_DATA_HERE),
 
     # Decompress stream with gzip
     [System.IO.Compression.CompressionMode]::Decompress
-
 ) |
 
 # % is shorthand for "foreach-object"
-
 %{
 
     # Read from gzip stream, convert to ascii
